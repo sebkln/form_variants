@@ -1,0 +1,66 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+type: Form
+identifier: FillAndChangeFieldsExample
+prototypeName: standard
+label: 'Example - Fill and change fields'
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-identity
+    label: ''
+    renderables:
+      -
+        properties:
+          options:
+            mulder: 'Agent Mulder'
+            scully: 'Agent Scully'
+          fluidAdditionalAttributes:
+            required: required
+          prependOptionLabel: 'I am ...'
+        type: SingleSelect
+        identifier: agent
+        label: 'Your identity'
+        validators:
+          -
+            identifier: NotEmpty
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-truth
+    label: ''
+    renderables:
+      -
+        type: Checkbox
+        identifier: believe
+        label: 'I WANT TO BELIEVE'
+        properties:
+          fluidAdditionalAttributes:
+            disabled: disabled
+        variants:
+          -
+            identifier: mulder-believes
+            condition: 'formValues["agent"] == "mulder"'
+            properties:
+              fluidAdditionalAttributes:
+                checked: checked
+                disabled: disabled
+      -
+        properties:
+          text: 'The truth is out there.'
+        type: StaticText
+        identifier: truth
+        label: 'Mulder:'
+        variants:
+          -
+            identifier: scully-sceptical
+            condition: 'formValues["agent"] == "scully"'
+            label: 'Scully:'
+            properties:
+              text: 'The truth is out there. But so are lies.'

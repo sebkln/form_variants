@@ -1,0 +1,192 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+type: Form
+identifier: SkipPageExample
+prototypeName: standard
+label: 'Example - Skip a page'
+finishers:
+  -
+    options:
+      subject: 'Form example: Skip a page'
+      recipientAddress: your.company@example.com
+      recipientName: 'Your Company name'
+      senderAddress: '{email}'
+      senderName: '{fullname}'
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: true
+    identifier: EmailToReceiver
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-contact
+    label: 'Contact information'
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: fullname
+        label: 'Full name'
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'John Doe'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: email
+        label: 'E-mail address'
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: john@doe.com
+            required: required
+        validators:
+          -
+            identifier: EmailAddress
+          -
+            identifier: NotEmpty
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-billing-address
+    label: 'Billing address'
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: street-billing
+        label: Street
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: '2 Abbey Road'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: zip-billing
+        label: ZIP
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: NW8
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: city-billing
+        label: City
+        properties:
+          elementDescription: ''
+          fluidAdditionalAttributes:
+            placeholder: London
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: country-billing
+        label: Country
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'United Kingdom'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        type: Checkbox
+        identifier: address-identical
+        label: 'This is also the shipping address.'
+        variants:
+          -
+            identifier: load-summary
+            condition: 'stepType == "SummaryPage"'
+            renderingOptions:
+              enabled: false
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-shipping-address
+    label: 'Shipping address'
+    variants:
+      -
+        identifier: skip-shipping
+        condition: 'formValues["address-identical"] == 1'
+        renderingOptions:
+          enabled: false
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: street-shipping
+        label: Street
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: '10 Downing St'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: zip-shipping
+        label: ZIP
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'SW1A 2AA'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: city-shipping
+        label: City
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: London
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: country-shipping
+        label: Country
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'United Kingdom'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: SummaryPage
+    identifier: summarypage-1
+    label: 'Summary'

@@ -1,0 +1,25 @@
+# Examples: conditional variants in the TYPO3 Form Framework
+
+With TYPO3 v9, the Form Framework learned some new tricks!
+One of them is the possibility to adapt the form depending on conditions.
+The examples in this demo extension will show you how it works.
+
+## Example: Skip a page
+
+This example contains several pages.
+If you fill out the second page with the billing address and
+activate the checkbox *'This is also the shipping address.'*,
+the third page with the shipping address fields will be skipped.
+
+Both the summary page and the sent email will only contain the filled
+fields. No field from the skipped page is displayed for you or the user.
+
+
+## Example: Fill and change fields
+
+You get to choose: are you Mulder or Scully?
+
+Depending on your selection, the fields on the following page will change.
+Prefill a checkbox, switch a label and text. Much more is possible.
+
+**More examples and a tutorial will follow!**

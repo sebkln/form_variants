@@ -1,0 +1,38 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          999: EXT:form_variants/Resources/Private/Forms/
+        allowSaveToExtensionPaths: true
+        allowDeleteFromExtensionPaths: true
+
+      prototypes:
+        ### PROTOTYPE: STANDARD
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                translation:
+                  translationFile:
+                    # Default translation file for the frontend:
+                    10: 'EXT:form/Resources/Private/Language/locallang.xlf'
+              formEditor:
+                editors:
+                  900:
+                    selectOptions:
+                      50:
+                        value: 'Confirmation'
+                        label: 'formEditor.elements.Form.finisher.Confirmation.editor.header.label'
+                      60:
+                        value: 'SaveToDatabase'
+                        label: 'formEditor.elements.Form.finisher.SaveToDatabase.editor.header.label'
+          finishersDefinition:
+            Confirmation:
+              FormEngine:
+                label: 'formEditor.element.AdvancedPassword.editor.confirmationLabel.predefinedDefaults'
+                elements:
+                  message:
+                    label: 'formEditor.elements.Form.finisher.Confirmation.editor.header.label'
+                    config:
+                      type: 'input'
