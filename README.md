@@ -22,4 +22,12 @@ You get to choose: are you Mulder or Scully?
 Depending on your selection, the fields on the following page will change.
 Prefill a checkbox, switch a label and text. Much more is possible.
 
+
+## Example: Translate with variants
+
+Personally, I prefer to localize forms with a `locallang.xlf` file.
+But it's now possible to use variants to translate a form, too!
+
+In this example everything is translated by using variants, including some placeholders and a custom error message for an invalid email address.
+
 **More examples and a tutorial will follow!**

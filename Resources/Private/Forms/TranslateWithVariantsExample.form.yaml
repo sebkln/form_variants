@@ -1,0 +1,119 @@
+
+renderingOptions:
+  submitButtonLabel: 'Send message'
+identifier: TranslateWithVariantsExample
+label: 'Example - Translating with variants'
+type: Form
+prototypeName: standard
+variants:
+  -
+    identifier: submit-button-de
+    condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+    label: 'Beispiel - Übersetzen mit Varianten'
+    renderingOptions:
+      submitButtonLabel: 'Nachricht senden'
+finishers:
+  -
+    options:
+      subject: 'Your message: {subject}'
+      recipientAddress: your.company@example.com
+      recipientName: 'Your Company name'
+      senderAddress: '{email}'
+      senderName: '{name}'
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: true
+    identifier: EmailToReceiver
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: page-en
+    label: 'Contact form'
+    type: Page
+    variants:
+      -
+        identifier: page-de
+        condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+        label: Kontaktformular
+    renderables:
+      -
+        defaultValue: ''
+        identifier: name
+        label: 'Your name'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'John Doe'
+        variants:
+          -
+            identifier: name-de
+            condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+            label: 'Dein Name'
+            properties:
+              fluidAdditionalAttributes:
+                placeholder: 'Michael Mustermann'
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: subject
+        label: Subject
+        type: Text
+        variants:
+          -
+            identifier: subject-de
+            condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+            label: Betreff
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: email
+        label: Email
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: john@doe.com
+          validationErrorMessages:
+            -
+              code: 1221559976
+              message: 'Please enter valid email address. Thanks!'
+        variants:
+          -
+            identifier: email-de
+            condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+            label: E-Mail-Adresse
+            properties:
+              fluidAdditionalAttributes:
+                placeholder: michael@mustermann.de
+              validationErrorMessages:
+                -
+                  code: 1221559976
+                  message: 'Bitte gebe eine gültige E-Mail-Adresse ein. Danke!'
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        identifier: message
+        label: Message
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: ''
+        variants:
+          -
+            identifier: message-de
+            condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+            label: Nachricht
+        validators:
+          -
+            identifier: NotEmpty
