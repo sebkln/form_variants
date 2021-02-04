@@ -3,7 +3,7 @@ TYPO3:
     Form:
       persistenceManager:
         allowedExtensionPaths:
-          999: EXT:form_variants/Resources/Private/Forms/
+          950: EXT:form_variants/Resources/Private/Forms/
         allowSaveToExtensionPaths: true
         allowDeleteFromExtensionPaths: true
 
