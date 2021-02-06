@@ -1,0 +1,33 @@
+{
+	"name": "sebkln/form-variants",
+	"type": "typo3-cms-extension",
+	"description": "Contains examples how to use conditional variants in the Form Framework, which were introduced in TYPO3 v9.",
+	"license": [
+		"GPL-2.0-or-later"
+	],
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"forms"
+	],
+	"homepage": "https://www.sebkln.de",
+	"authors": [
+		{
+			"name": "Sebastian Klein",
+			"email": "sebastian@sebkln.de",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"typo3/cms-core": ">=9.5.0 <9.5.99"
+	},
+	"replace": {
+		"sebkln/form-variants": "self.version",
+		"typo3-ter/form-variants": "self.version"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "form_variants"
+		}
+	}
+}
