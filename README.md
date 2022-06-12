@@ -4,6 +4,12 @@ With TYPO3 v9, the Form Framework learned some new tricks!
 One of them is the possibility to adapt the form depending on conditions.
 The examples in this demo extension will show you how it works.
 
+Since some configurations have changed between TYPO3 versions, you can choose the compatible version of this extension here:
+- [form_variants for TYPO3 v11](https://github.com/sebkln/form_variants/tree/11.5)
+- [form_variants for TYPO3 v10](https://github.com/sebkln/form_variants/tree/10.4)
+- [form_variants for TYPO3 v9](https://github.com/sebkln/form_variants/tree/9.5)
+
+
 ## Example: Skip a page
 
 This example contains several pages.
@@ -29,5 +35,3 @@ Personally, I prefer to localize forms with a `locallang.xlf` file.
 But it's now possible to use variants to translate a form, too!
 
 In this example everything is translated by using variants, including some placeholders and a custom error message for an invalid email address.
-
-**More examples and a tutorial will follow!**
