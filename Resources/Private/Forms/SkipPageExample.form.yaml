@@ -9,15 +9,13 @@ finishers:
   -
     options:
       subject: 'Form example: Skip a page'
-      recipientAddress: your.company@example.com
-      recipientName: 'Your Company name'
       senderAddress: '{email}'
       senderName: '{fullname}'
-      replyToAddress: ''
-      carbonCopyAddress: ''
-      blindCarbonCopyAddress: ''
-      format: html
       attachUploads: true
+      recipients:
+        your.company@example.com: 'Your Company name'
+      addHtmlPart: true
+      useFluidEmail: true
     identifier: EmailToReceiver
 renderables:
   -
@@ -189,4 +187,4 @@ renderables:
       nextButtonLabel: 'Next step'
     type: SummaryPage
     identifier: summarypage-1
-    label: 'Summary'
+    label: Summary

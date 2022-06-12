@@ -16,15 +16,14 @@ finishers:
   -
     options:
       subject: 'Your message: {subject}'
-      recipientAddress: your.company@example.com
-      recipientName: 'Your Company name'
       senderAddress: '{email}'
       senderName: '{name}'
-      replyToAddress: ''
-      carbonCopyAddress: ''
-      blindCarbonCopyAddress: ''
-      format: html
       attachUploads: true
+      recipients:
+        your.company@example.com: 'Your Company name'
+      addHtmlPart: true
+      useFluidEmail: true
+      title: '{subject}'
     identifier: EmailToReceiver
 renderables:
   -
@@ -109,6 +108,7 @@ renderables:
         properties:
           fluidAdditionalAttributes:
             placeholder: ''
+            required: required
         variants:
           -
             identifier: message-de
