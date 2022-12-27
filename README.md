@@ -5,6 +5,7 @@ One of them is the possibility to adapt the form depending on conditions.
 The examples in this demo extension will show you how it works.
 
 Since some configurations have changed between TYPO3 versions, you can choose the compatible version of this extension here:
+- [form_variants for TYPO3 v12](https://github.com/sebkln/form_variants/tree/12.4)
 - [form_variants for TYPO3 v11](https://github.com/sebkln/form_variants/tree/11.5)
 - [form_variants for TYPO3 v10](https://github.com/sebkln/form_variants/tree/10.4)
 - [form_variants for TYPO3 v9](https://github.com/sebkln/form_variants/tree/9.5)
