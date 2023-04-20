@@ -8,8 +8,6 @@ Since some configurations have changed between TYPO3 versions, you can choose th
 - [form_variants for TYPO3 v12](https://github.com/sebkln/form_variants/tree/12.4)
 - [form_variants for TYPO3 v11](https://github.com/sebkln/form_variants/tree/11.5)
 - [form_variants for TYPO3 v10](https://github.com/sebkln/form_variants/tree/10.4)
-- [form_variants for TYPO3 v9](https://github.com/sebkln/form_variants/tree/9.5)
-
 
 ## Example: Skip a page
 
@@ -21,14 +19,12 @@ the third page with the shipping address fields will be skipped.
 Both the summary page and the sent email will only contain the filled
 fields. No field from the skipped page is displayed for you or the user.
 
-
 ## Example: Fill and change fields
 
 You get to choose: are you Mulder or Scully?
 
 Depending on your selection, the fields on the following page will change.
 Prefill a checkbox, switch a label and text. Much more is possible.
-
 
 ## Example: Translate with variants
 

@@ -1,7 +1,0 @@
-plugin.tx_form.settings.yamlConfigurations {
-    950 = EXT:form_variants/Configuration/Yaml/CustomFormSetup.yaml
-}
-
-module.tx_form.settings.yamlConfigurations {
-    950 = EXT:form_variants/Configuration/Yaml/CustomFormSetup.yaml
-}
