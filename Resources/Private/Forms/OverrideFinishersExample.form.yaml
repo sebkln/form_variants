@@ -1,0 +1,116 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+identifier: OverrideFinishersExample
+label: 'Example - Override finishers'
+type: Form
+prototypeName: standard
+variants:
+  -
+    identifier: different-finishers
+    condition: 'formValues["sendNoEmailToSender"] == 1'
+    finishers:
+      -
+        options:
+          subject: 'E-Mail from website'
+          recipients:
+            your.company@example.com: 'Your Company name'
+          senderAddress: '{email}'
+          senderName: '{name}'
+          format: html
+          attachUploads: true
+          translation:
+            language: default
+          title: ''
+          useFluidEmail: true
+        identifier: EmailToReceiver
+      -
+        identifier: Confirmation
+        options:
+          message: 'Thank you for your message! We will get back to you as soon as possible.'
+finishers:
+  -
+    options:
+      subject: 'E-Mail from website'
+      recipients:
+        your.company@example.com: 'Your Company name'
+      senderAddress: '{email}'
+      senderName: '{name}'
+      format: html
+      attachUploads: true
+      translation:
+        language: default
+      title: ''
+      useFluidEmail: true
+    identifier: EmailToReceiver
+  -
+    options:
+      subject: 'Your message to us'
+      recipients:
+        '{email}': '{name}'
+      senderAddress: no-reply@example.com
+      senderName: 'Your company'
+      addHtmlPart: true
+      attachUploads: true
+      title: ''
+      useFluidEmail: true
+    identifier: EmailToSender
+  -
+    options:
+      message: 'Thank you for your message! A copy was sent to your email address.'
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: page-1
+    label: 'Contact Form'
+    type: Page
+    renderables:
+      -
+        defaultValue: ''
+        identifier: name
+        label: Name
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Name
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: email
+        label: Email
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Email address'
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        identifier: message
+        label: Message
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: ''
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        type: Checkbox
+        identifier: sendNoEmailToSender
+        label: 'I don''t want a copy of this message!'
+        variants:
+          -
+            identifier: hide-in-emails
+            renderingOptions:
+              enabled: false
+            condition: 'finisherIdentifier in ["EmailToSender", "EmailToReceiver"]'
