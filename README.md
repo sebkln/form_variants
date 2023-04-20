@@ -32,3 +32,13 @@ Personally, I prefer to localize forms with a `locallang.xlf` file.
 But it's now possible to use variants to translate a form, too!
 
 In this example everything is translated by using variants, including some placeholders and a custom error message for an invalid email address.
+
+## Example: Override finishers
+
+You can also modify finishers with variants. **However, it does work differently.**
+
+Instead of overriding a single finisher (as you would do with a form field),
+you'll need to define the variant at the root level of the form definition
+and then replace the whole list of finishers within it.
+
+To demonstrate this behavior, the example defines fewer finishers for the variant.
