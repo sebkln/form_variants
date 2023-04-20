@@ -8,7 +8,7 @@ prototypeName: standard
 variants:
   -
     identifier: submit-button-de
-    condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+    condition: 'siteLanguage("twoLetterIsoCode") == "de"'
     label: 'Beispiel - Übersetzen mit Varianten'
     renderingOptions:
       submitButtonLabel: 'Nachricht senden'
@@ -36,7 +36,7 @@ renderables:
     variants:
       -
         identifier: page-de
-        condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+        condition: 'siteLanguage("twoLetterIsoCode") == "de"'
         label: Kontaktformular
     renderables:
       -
@@ -50,7 +50,7 @@ renderables:
         variants:
           -
             identifier: name-de
-            condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+            condition: 'siteLanguage("twoLetterIsoCode") == "de"'
             label: 'Dein Name'
             properties:
               fluidAdditionalAttributes:
@@ -66,7 +66,7 @@ renderables:
         variants:
           -
             identifier: subject-de
-            condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+            condition: 'siteLanguage("twoLetterIsoCode") == "de"'
             label: Betreff
         validators:
           -
@@ -86,7 +86,7 @@ renderables:
         variants:
           -
             identifier: email-de
-            condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+            condition: 'siteLanguage("twoLetterIsoCode") == "de"'
             label: E-Mail-Adresse
             properties:
               fluidAdditionalAttributes:
@@ -112,7 +112,7 @@ renderables:
         variants:
           -
             identifier: message-de
-            condition: 'siteLanguage("locale") == "de_DE.UTF-8"'
+            condition: 'siteLanguage("twoLetterIsoCode") == "de"'
             label: Nachricht
         validators:
           -
