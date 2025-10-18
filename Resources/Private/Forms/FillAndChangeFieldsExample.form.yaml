@@ -46,7 +46,7 @@ renderables:
         variants:
           -
             identifier: mulder-believes
-            condition: 'formValues["agent"] == "mulder"'
+            condition: 'traverse(formValues, "agent") == "mulder"'
             properties:
               fluidAdditionalAttributes:
                 checked: checked
@@ -60,7 +60,7 @@ renderables:
         variants:
           -
             identifier: scully-sceptical
-            condition: 'formValues["agent"] == "scully"'
+            condition: 'traverse(formValues, "agent") == "scully"'
             label: 'Scully:'
             properties:
               text: 'The truth is out there. But so are lies.'

@@ -129,7 +129,7 @@ renderables:
     variants:
       -
         identifier: skip-shipping
-        condition: 'formValues["address-identical"] == 1'
+        condition: 'traverse(formValues, "address-identical") == 1'
         renderingOptions:
           enabled: false
     renderables:

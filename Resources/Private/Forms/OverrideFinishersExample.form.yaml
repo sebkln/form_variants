@@ -8,7 +8,7 @@ prototypeName: standard
 variants:
   -
     identifier: different-finishers
-    condition: 'formValues["sendNoEmailToSender"] == 1'
+    condition: 'traverse(formValues, "sendNoEmailToSender") == 1'
     finishers:
       -
         options:
